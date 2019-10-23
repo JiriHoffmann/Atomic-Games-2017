@@ -61,7 +61,7 @@ function updateResources(tile) {
 function updateNearestResource() {
   let distance = 1000;
   resources.forEach(resource => {
-    let tempDistance = Math.abs(resource.x - resource.y);
+    let tempDistance = Math.abs(resource.x) + Math.abs(resource.y);
     if (tempDistance < distance) {
       distance = tempDistance;
       nearest_resource = resource;
