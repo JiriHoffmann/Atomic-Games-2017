@@ -1,7 +1,6 @@
 var PF = require("pathfinding");
 
-function findPath(from, to, walls) {
-  let offset = 5;
+function findPath(from, to, walls, offset) {
   let distanceX = Math.abs(from.x - to.x) + 1 + offset * 2;
   let distanceY = Math.abs(from.y - to.y) + 1 + offset * 2;
 
@@ -40,6 +39,7 @@ function findPath(from, to, walls) {
     route[1] = route[1] + startY - offset;
   });
 
+
   return path;
 }
 
@@ -54,6 +54,8 @@ let walls = [
   { x: 1, y: 4 },
   { x: 0, y: 3 }
 ];
-console.log(findPath(from, to, walls));
+let offset = 5;
+-
+console.log(findPath(from, to, walls, offset));
 
 // export default findPath;
